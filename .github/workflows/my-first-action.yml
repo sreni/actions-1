@@ -1,0 +1,17 @@
+name: My First WorkFlow
+
+on: push
+
+jobs:
+    first_Job:
+        name:  Ubunut machine for this work flow
+        runs-on: ubuntu-20.04
+        steps:
+        - name: Welcome Message
+          run: echo "Welcome to first actions"
+
+        - name: List files
+          run: ls
+
+        - name: Read Files
+          run: cat README.md
