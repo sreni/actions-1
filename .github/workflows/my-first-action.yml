@@ -4,7 +4,6 @@ on: push
 
 jobs:
     first_Job:
-        name:  Ubunut machine for this work flow
         runs-on: ubuntu-22.04
         steps:
         - name: Welcome Message
