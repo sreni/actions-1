@@ -5,51 +5,6 @@ on: push #Event Name
 jobs: #WorkfLow can run one or more Jobs
     linux-ubuntu-actions:
         runs-on: ubuntu-22.04
-        steps: #Steps are building blocks of Jobs
-            
-            - name: Welcome To Linux World
-              run: echo "Welcome To Linux!"
-            
-            - name: Verify Current Directory Path
-              run: pwd
-
-            - name: Verify Current Directory Path
-              run: cd /usr/local
-
-            - name: Verify Current Directory Path
-              run: pwd
-
-            - name: Create a Directory
-              run:  sudo mkdir srini
-
-            - name: Check The Current path
-              run: sudo mkdir ~/srini/actions/
-
-            - name: Change the Current Working Directory to Newly Created Path
-              run: cd /usr/local/srini
-
-            - name: Creating dummy files in Newly Created Path
-              run: for i in {1..10}; do touch "file_$(date_%s%N)_$1.txt" done;"
-
-             - name: Check The Current path files
-              run: ls -lrt ~/srini/actions/
-
-            - name: Go To Root Path
-              run: cd /
-
-            - name: Check The Current path
-              run: ls -lrt ./srini/actions/
-
-            - name: Provide The RWX Permissions to the
-              run: chmod 777 ./srini/actions/
-
-            - name: Check The Current path
-              run: ls -lrt ./srini/actions/
-
-            - name: History of Executed Commands in Terminal
-              run: history > history.txt
-
-            - name: Display The Command's in History File
-              run: cat history.txt
-
-
+        steps: #Steps are building blocks of Jobs 
+        - name: Welcome To Linux World
+          run: echo "Welcome To Linux!"
