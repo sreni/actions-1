@@ -21,7 +21,7 @@ jobs: #WorkfLow can run one or more Jobs
 
         - name: Switch User and run commands
           run: |
-            sudo su - srini bash -c '
+            sudo su - srini bash -c
             who am i
             cd ~/workspace
             for i in {1..10}; do touch "file_$(date_%s%N)_$1.txt" done;"
