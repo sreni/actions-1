@@ -13,7 +13,7 @@ jobs: #WorkfLow can run one or more Jobs
               run: pwd
 
             - name: Create a Directory
-              run: mkdir -p /home/srini/actions
+              run: su mkdir -p /home/srini/actions
 
             - name: Change the Current Working Directory to Newly Created Path
               run: cd /home/srini/actions
