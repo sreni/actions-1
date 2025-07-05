@@ -1,4 +1,4 @@
-name: LInux Family Actions #Workflow Name
+name: Linux Family Actions #Workflow Name
 
 on: push #Event Name
 
@@ -36,7 +36,9 @@ jobs: #WorkfLow can run one or more Jobs
           run: |
             sudo su - srini bach -c '
             cd ~/workspace
-            ls -lrt            '
+            ls -lrt
+            echo $history
+            cat history.txt           '
 
         - name: Present Current Directory Path
           run: pwd
