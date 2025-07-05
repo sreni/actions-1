@@ -8,3 +8,6 @@ jobs: #WorkfLow can run one or more Jobs
         steps: #Steps are building blocks of Jobs 
         - name: Welcome To Linux World
           run: echo "Welcome To Linux!"
+        
+        - name: Verify Current Directory Path
+          run: pwd
