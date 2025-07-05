@@ -27,9 +27,8 @@ jobs: #WorkfLow can run one or more Jobs
             echo "File created by $(whoami)" > testfile.txt
             ls -l
             '
-
         - name: List The Details in Home Directory
-          run: ls -lrt /home/srini/workspace
+          run: su ls -lrt /home/srini/workspace
 
         - name: Verify Current Directory Path
           run: cd /home/srini
