@@ -45,7 +45,7 @@ jobs: #WorkfLow can run one or more Jobs
 
         - name: Creating dummy files in Newly Created Path
           run: |
-            sudo su - srini bash -c 'for i in {1..10}; do touch "/home/srini/file_$(date +%s%N)_$i.txt"; done'
+            sudo su - srini bash -c 'for i in {1..10}; do touch "/home/srini/file_$(date +%M)_$i.txt"; done'
             echo "The below files creating..... "
             sudo ls -ltr /home/srini/workspace
             echo "Files Created Successfully"
