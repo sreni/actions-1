@@ -24,7 +24,7 @@ jobs: #WorkfLow can run one or more Jobs
             sudo su - srini bash -c '
             who am i
             cd ~/workspace
-            for i in {1..10}; do touch `"file_$(date_%s%N)_$1.txt" done;"`
+            echo "File created by $(whoami)" > testfile.txt
             ls -l
             '
 
