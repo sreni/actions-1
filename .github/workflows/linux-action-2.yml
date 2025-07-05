@@ -28,7 +28,10 @@ jobs: #WorkfLow can run one or more Jobs
             ls -l
             '
         - name: List The Details in Home Directory
-          run: su ls -lrt /home/srini/workspace
+          run: |
+            sudo su - srini bach -c '
+            ls -lrt /home/srini/workspace
+            '
 
         - name: Verify Current Directory Path
           run: cd /home/srini
