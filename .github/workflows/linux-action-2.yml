@@ -15,6 +15,9 @@ jobs: #WorkfLow can run one or more Jobs
         - name: Create User  in home Directory
           run: sudo adduser srini
 
+        - name: Switch User
+          run: su srimi
+
         - name: List The Details in Home Directory
           run: ls -lrt /home/srini/
 
