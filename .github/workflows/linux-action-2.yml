@@ -30,7 +30,8 @@ jobs: #WorkfLow can run one or more Jobs
         - name: List The Details in Home Directory
           run: |
             sudo su - srini bach -c '
-            ls -l ~/workspace
+            cd ~/workspace
+            ls -lrt
             '
 
         - name: Verify Current Directory Path
