@@ -13,13 +13,21 @@ jobs: #WorkfLow can run one or more Jobs
           run: pwd
 
         - name: Create User  in home Directory
-          run: sudo adduser srini
+          run: |
+            sudo adduser --disabled-password --gecos "" srini
+            sudo mkdir -p /home/srini/worspace
+            sudo chown srini:srini /home/srini/worspace
+            echo User created successfully
 
-        - name: Switch User
-          run: su srini
+        - name: Switch User and run commands
+          run: |
+            sudo su - srini bash -c '
+            who am i
+            cd ~/workspace
+            for i in {1..10}; do touch "file_$(date_%s%N)_$1.txt" done;"
 
         - name: List The Details in Home Directory
-          run: ls -lrt /home/srini/
+          run: ls -lrt /home/srini/workspace
 
         - name: Verify Current Directory Path
           run: cd /home/srini
