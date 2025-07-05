@@ -16,7 +16,11 @@ jobs: #WorkfLow can run one or more Jobs
           run: sudo adduser srini
 
         - name: List The Details in Home Directory
-          run: ls -d /home/
-          
+          run: ls -d /home/srini/ | grep '^d'
+
         - name: Verify Current Directory Path
-          run: cd /usr/local
+          run: cd /home/srini
+
+        - name: Verify Current Directory Path
+          run: pwd
+
