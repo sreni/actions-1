@@ -48,5 +48,6 @@ jobs: #WorkfLow can run one or more Jobs
             sudo su - srini bash -c 'for i in {1..10}; do touch "/home/srini/file_$(date +%M)_$i.txt"; done'
             echo "The below files creating..... "
             sudo ls -ltr /home/srini/workspace
+            echo `cat /home/srini/workspace/history.txt`
             echo "Files Created Successfully"
 
