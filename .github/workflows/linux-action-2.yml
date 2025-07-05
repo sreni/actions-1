@@ -15,8 +15,8 @@ jobs: #WorkfLow can run one or more Jobs
         - name: Create User  in home Directory
           run: |
             sudo adduser --disabled-password --gecos "" srini
-            sudo mkdir -p /home/srini/worspace
-            sudo chown srini:srini /home/srini/worspace
+            sudo mkdir -p /home/srini/workspace
+            sudo chown srini:srini /home/srini/workspace
             echo User created successfully
 
         - name: Switch User and run commands
