@@ -21,6 +21,9 @@ jobs: #WorkfLow can run one or more Jobs
         - name: Verify Current Directory Path
           run: cd /home/srini
 
-        - name: Verify Current Directory Path
+        - name: Check The Current path
+          run: sudo mkdir ~/srini/actions/
+
+        - name: Present Current Directory Path
           run: pwd
 
