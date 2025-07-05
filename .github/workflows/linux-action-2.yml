@@ -12,23 +12,26 @@ jobs: #WorkfLow can run one or more Jobs
             - name: Verify Current Directory Path
               run: pwd
 
-            - name: Providing Sudo permissions
-              run: sudo su
+            - name: Verify Current Directory Path
+              run: cd /usr/local
 
             - name: Verify Current Directory Path
-              run: cd /home
-
-            - name: Providing Sudo permissions
-              run: sudo su
+              run: pwd
 
             - name: Create a Directory
-              run: su mkdir srini
+              run:  sudo mkdir srini
+
+            - name: Check The Current path
+              run: sudo mkdir ~/srini/actions/
 
             - name: Change the Current Working Directory to Newly Created Path
-              run: cd /home/srini/actions
+              run: cd /usr/local/srini
 
             - name: Creating dummy files in Newly Created Path
               run: for i in {1..10}; do touch "file_$(date_%s%N)_$1.txt" done;"
+
+             - name: Check The Current path files
+              run: ls -lrt ~/srini/actions/
 
             - name: Go To Root Path
               run: cd /
