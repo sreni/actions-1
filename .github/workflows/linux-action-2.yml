@@ -43,3 +43,9 @@ jobs: #WorkfLow can run one or more Jobs
         - name: Present Current Directory Path
           run: pwd
 
+        - name: Creating dummy files in Newly Created Path
+          run: |
+            sudo su - srini bach -c '
+            for i in {1..10}; do touch '"'file_$(date_%s%N)_$1.txt" done;'"'
+            '
+
