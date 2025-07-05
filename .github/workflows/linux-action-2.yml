@@ -26,19 +26,17 @@ jobs: #WorkfLow can run one or more Jobs
             cd ~/workspace
             echo "File created by $(whoami)" > testfile.txt
             ls -l
+            pwd
+            cat testfile.txt
+            pwd
+            history > history.txt
+            cat history.txt
             '
         - name: List The Details in Home Directory
           run: |
             sudo su - srini bach -c '
             cd ~/workspace
-            ls -lrt
-            '
-
-        - name: Verify Current Directory Path
-          run: cd /home/srini
-
-        - name: Check The Current path
-          run: sudo mkdir ~/srini/actions/
+            ls -lrt            '
 
         - name: Present Current Directory Path
           run: pwd
