@@ -1,4 +1,4 @@
-name: build-action
+name: build-checkout-action
 
 on: push
 
@@ -17,7 +17,7 @@ jobs:
             echo "reading README.MD file"
             cat README.md
             echo "Files README.MD successfully Read From The Repository"
-            
+
 
 
 
