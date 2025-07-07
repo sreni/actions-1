@@ -10,10 +10,10 @@ jobs:
               uses: actions/checkout@v4
 
             - name: Install Cowsay Program
-              run: sudo apt-get install cowsay -y
+              run: sudo apt update && sudo apt install -y cowsay
 
             - name: Execute cowsay CMD
-              run: cowsay -f Elephant "I have Teeths and and Trunk and i am Big" >> Elephant.txt
+              run: cowsay -f elephant "I have Teeths and and Trunk and i am Big" >> Elephant.txt
 
             - name: Test File Exist
               run: grep -i "Elephant" Elephane.txt
