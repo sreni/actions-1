@@ -15,6 +15,9 @@ jobs:
             - name: Execute cowsay CMD
               run: cowsay -f elephant "I have Teeths and and Trunk and i am Big" >> Elephant.txt
 
+            - name: List Repo Files
+              run: ls
+
             - name: Test File Exist
               run: grep -i "Elephant" Elephant.txt
 
