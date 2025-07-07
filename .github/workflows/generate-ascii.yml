@@ -18,9 +18,6 @@ jobs:
             - name: List Repo Files
               run:  ls
 
-            - name: Test File Exist
-              run:  grep -i "elephant"
-
             - name: Read File
               run:  cat elephant.txt
 
