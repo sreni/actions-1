@@ -9,19 +9,10 @@ jobs:
             - name: Checkout Repo
               uses: actions/checkout@v4
 
-            - name: Install Cowsay Program
-              run: sudo apt update && sudo apt install -y cowsay
-
-            - name: Execute cowsay CMD
-              run: cowsay -f fox "I have Teeths and and Trunk and i am Big" >> elephant.txt
-
-            - name: List Repo Files
-              run:  ls
-
-            - name: Read File
-              run:  cat elephant.txt
-
             - name: Checkout Repo Files
-              run:  ls
+              run:  ls -lart
+
+            - name: Install Cowsay Program
+              run: ./ascii-script.sh
 
               
