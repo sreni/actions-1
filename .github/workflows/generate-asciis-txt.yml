@@ -6,13 +6,13 @@ jobs:
     ascii-action:
         runs-on: ubuntu-22.04
         steps:
-            - name: Checkout Repo
-              uses: actions/checkout@v4
+          - name: Checkout Repo
+            uses: actions/checkout@v4
 
-            - name: Checkout Repo Files
-              run:  ls -lart
+          - name: Checkout Repo Files
+            run:  ls -lart
 
-            - name: Install Cowsay Program
-              run: |
-               chmod +x ./ascii-script.sh
+          - name: Install Cowsay Program
+            run: |
+              chmod +x ./ascii-script.sh
               ./ascii-script.sh
