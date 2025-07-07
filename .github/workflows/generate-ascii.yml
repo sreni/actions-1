@@ -13,16 +13,16 @@ jobs:
               run: sudo apt update && sudo apt install -y cowsay
 
             - name: Execute cowsay CMD
-              run: cowsay -f elephant "I have Teeths and and Trunk and i am Big" >> Elephant.txt
+              run: cowsay -f elephant "I have Teeths and and Trunk and i am Big" >> elephant.txt
 
             - name: List Repo Files
               run: ls
 
             - name: Test File Exist
-              run: grep -i "Elephant" Elephant.txt
+              run: grep -i "elephant" elephant.txt
 
             - name:  Read File
-              run: cat Elephant.txt
+              run: cat elephant.txt
 
             - name: Checkout Repo Files
               run: ls
