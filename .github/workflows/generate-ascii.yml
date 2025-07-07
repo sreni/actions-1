@@ -1,0 +1,27 @@
+name: Generate Ascii Artwork
+
+on: push
+
+jobs:
+    ascii-action:
+        runs-on: ubuntu-22.04
+        steps:
+            - name: Checkout Repo
+              uses: actions/checkout@v4
+
+            - name: Install Cowsay Program
+              run: sudo apt-get install cowsay -y
+
+            - name: Execute cowsay CMD
+              run: cowsay -f Elephant "I have Teeths and and Trunk and i am Big" >> Elephant.txt
+
+            - name: Test File Exist
+              run: grep -i "Elephant" Elephane.txt
+
+            - name:  Read File
+              run: cat Elephane.txt
+
+            - name: Checkout Repo Files
+              run: ls
+
+              
