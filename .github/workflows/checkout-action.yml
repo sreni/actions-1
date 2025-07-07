@@ -1,0 +1,24 @@
+name: build-action
+
+on: push
+
+jobs:
+    checkout-action:
+        runs-on: ubuntu-22.04
+        steps:
+         - name: Checkout Code in Repository.
+           uses: actions/checkout@v4
+
+         - name: List The Files
+           run: ls -lart
+
+         - name: Read The Files in Current Working Directory
+           run: |
+            echo "reading README.MD file"
+            cat README.md
+            echo "Files README.MD successfully Read From The Repository"
+            
+
+
+
+
