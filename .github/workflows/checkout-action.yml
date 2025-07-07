@@ -18,6 +18,9 @@ jobs:
             cat README.md
             echo "Files README.MD successfully Read From The Repository"
 
+         - name: Generate ASCII command
+           run: cowsay -f dragon "Run Fro Cover, I aam a Dragon .....RWARARAAA"
+
 
 
 
