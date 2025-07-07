@@ -13,7 +13,7 @@ jobs:
               run: sudo apt update && sudo apt install -y cowsay
 
             - name: Execute cowsay CMD
-              run: cowsay -f girl "I have Teeths and and Trunk and i am Big" >> elephant.txt
+              run: cowsay -f fox "I have Teeths and and Trunk and i am Big" >> elephant.txt
 
             - name: List Repo Files
               run:  ls
