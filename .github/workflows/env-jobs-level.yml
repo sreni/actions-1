@@ -1,4 +1,4 @@
-name: Exploring Variables and Secrets
+name: Job level ENV Variables and Secrets
 
 on: 
     push
