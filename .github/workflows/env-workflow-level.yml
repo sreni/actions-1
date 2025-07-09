@@ -11,22 +11,18 @@ jobs:
             - name: Docker Build
               env:
                 CONTAINER_REGISTRY: docker.io
-                DOCKER_USERNAME: srinivas
                 IMAGE_NAME: github-action-nginx
-              run: echo docker build -t $CONTAINER_REGISTRY/$DOCKER_USERNAME/${{ env.IMAGE_NAME }}:latest
+              run: echo docker build -t $CONTAINER_REGISTRY/${{ vars.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:latest
 
             - name: Docker Login
               env:
-                DOCKER_USERNAME: srinivas
-                DOCKER_PASSWORD: securepassword
-              run: echo docker login --username=$DOCKER_USERNAME --password=${{ env.DOCKER_PASSWORD }}
+              run: echo docker login --username=${{ vars.DOCKER_USERNAME }} --password=${{ secrets.DOCKER_PASSWORD }}
 
             - name: Docker Publish
               env:               
                 CONTAINER_REGISTRY: docker.io
-                DOCKER_USERNAME: srinivas
                 IMAGE_NAME: github-action-nginx
-              run: echo docker push ${{ env.CONTAINER_REGISTRY }}/${{ env.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:latest
+              run: echo docker push ${{ env.CONTAINER_REGISTRY }}/${{ vars.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:latest
     deploy:
         needs: docker
         runs-on: ubuntu-latest
