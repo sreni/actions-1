@@ -1,0 +1,39 @@
+name: Workflow level Env Variables and Secrets
+
+on: 
+    push
+# Environment Variables values hardcoded in steps
+
+jobs:
+    docker:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Docker Build
+              env:
+                CONTAINER_REGISTRY: docker.io
+                DOCKER_USERNAME: srinivas
+                IMAGE_NAME: github-action-nginx
+              run: echo docker build -t $CONTAINER_REGISTRY/$DOCKER_USERNAME/${{ env.IMAGE_NAME }}:latest
+
+            - name: Docker Login
+              env:
+                DOCKER_USERNAME: srinivas
+                DOCKER_PASSWORD: securepassword
+              run: echo docker login --username=$DOCKER_USERNAME --password=${{ env.DOCKER_PASSWORD }}
+
+            - name: Docker Publish
+              env:               
+                CONTAINER_REGISTRY: docker.io
+                DOCKER_USERNAME: srinivas
+                IMAGE_NAME: github-action-nginx
+              run: echo docker push ${{ env.CONTAINER_REGISTRY }}/${{ env.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:latest
+    deploy:
+        needs: docker
+        runs-on: ubuntu-latest
+        steps:
+          - name: Docker Run
+            env:
+                CONTAINER_REGISTRY: docker.io
+                DOCKER_USERNAME: srinivas
+                IMAGE_NAME: github-action-nginx
+            run: echo docker run -d -p 8080:8080 ${{ env.CONTAINER_REGISTRY }}/$DOCKER_USERNAME/$IMAGE_NAME:latest
