@@ -3,7 +3,6 @@ name: Workflow level Env Variables and Secrets
 on: 
     push
 # Environment Variables values hardcoded in steps
-
 jobs:
     docker:
         runs-on: ubuntu-latest
@@ -32,4 +31,4 @@ jobs:
                 CONTAINER_REGISTRY: docker.io
                 DOCKER_USERNAME: srinivas
                 IMAGE_NAME: github-action-nginx
-            run: echo docker run -d -p 8080:8080 ${{ env.CONTAINER_REGISTRY }}/$DOCKER_USERNAME/$IMAGE_NAME:latest
+            run: echo docker run -d -p 8080:8080 ${{ env.CONTAINER_REGISTRY }}/${{ vars.DOCKER_USERNAME }}/$IMAGE_NAME:latest
