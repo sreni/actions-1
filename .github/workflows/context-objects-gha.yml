@@ -46,11 +46,11 @@ jobs:
             - name: Dump runner context
               env:
                 RUNNER_CONTEXT: ${{ toJson(runner) }}
-              run: echo ${{ RUNNER_CONTEXT }}
+              run: echo ${{ env.RUNNER_CONTEXT }}
             - name: Dump strategy context
               env:
                 STRATEGY_CONTEXT: ${{ toJson(strategy) }}
-              run: echo ${{ STRATEGY_CONTEXT }}
+              run: echo ${{ env.STRATEGY_CONTEXT }}
             - name: Dump matrix context
               env:
                 MATRIX_CONTEXT: ${{ toJson(matrix) }}
