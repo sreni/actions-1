@@ -33,16 +33,6 @@ jobs:
                 STEPS_CONTEXT: ${{ toJson(steps) }}
               run: echo ${{ env.STEPS_CONTEXT }}
 
-            - name: Dump Strategy Context
-              env:
-                STRATEGY_CONTEXT: ${{ toJson(strategy) }}
-              run: echo ${{ env.STRATEGY_CONTEXT }}
-
-            - name: Dump Matrix Context
-              env:
-                MATRIX_CONTEXT: ${{ toJson(matrix) }}
-              run: echo ${{ env.MATRIX_CONTEXT }}
-
             - name: Dumpt Needs Context
               env:
                 NEEDS_CONTEXT: ${{ toJson(needs) }}
