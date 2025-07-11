@@ -1,0 +1,57 @@
+name: github-predefine-context-objects
+on:
+  push
+jobs:
+    gha-context:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Github Context Objects
+              env:
+                GITHUB_CONTEXT: ${{ toJson(github) }}
+              run: echo ${{ env.GITHUB_CONTEXT }}
+
+            - name: Dump Environment Context
+              env:
+                ENV_CONTEXT: ${{ toJson(env) }}
+              run: echo ${{ env.ENV_CONTEXT }}
+            
+            - name: Dump Variables Context
+              env:
+                VARS_CONTEXT: ${{ toJson(vars) }}
+              run: echo "$VARS_CONTEXT"
+
+             - name: Dump Secrets Context
+               env:
+                SECRETS_CONTEXT: ${{ toJson(secrets) }}
+               run: echo ${{ env.SECRETS_CONTEXT }}
+
+            - name: Dump Job Context
+              env:
+                JOB_CONTEXT: ${{ toJson(job) }}
+              run: echo "$JOB_CONTEXT"
+
+            - name: Dump Steps Context
+              env:
+                STEPS_CONTEXT: ${{ toJson(steps) }}
+              run: echo ${{ env.STEPS_CONTEXT }}
+
+            - name: Dump Strategy Context
+              env:
+                STRATEGY_CONTEXT: ${{ toJson(strategy) }}
+              run: echo ${{ env.STRATEGY_CONTEXT }}
+
+            - name: Dump Matrix Context
+              env:
+                MATRIX_CONTEXT: ${{ toJson(matrix) }}
+              run: echo ${{ env.MATRIX_CONTEXT }}
+
+            - name: Dumpt Needs Context
+              env:
+                NEEDS_CONTEXT: ${{ toJson(needs) }}
+              run: echo ${{ env.NEEDS_CONTEXT }}
+
+            - name: Dump Inputs Context
+              env:
+                INPUTS_CONTEXT: ${{ inputs }}
+              run: echo ${{ env.INPUTS_CONTEXT }}
+              
