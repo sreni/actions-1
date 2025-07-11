@@ -52,6 +52,6 @@ jobs:
 
             - name: Dump Inputs Context
               env:
-                INPUTS_CONTEXT: ${{ inputs }}
+                INPUTS_CONTEXT: ${{ toJson(inputs) }}
               run: echo ${{ env.INPUTS_CONTEXT }}
               
