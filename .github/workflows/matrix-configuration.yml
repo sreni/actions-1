@@ -10,7 +10,7 @@ jobs:
           run: docker info
         
         - name: Run Images
-          run: docker run hellow-world
+          run: sudo docker run hellow-world
     deploy-on-windows:
         runs-on: windows-latest
         steps:
