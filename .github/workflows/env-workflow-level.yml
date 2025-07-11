@@ -22,6 +22,7 @@ jobs:
                 IMAGE_NAME: github-action-nginx
               run: echo docker push ${{ env.CONTAINER_REGISTRY }}/${{ vars.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:latest
     deploy:
+        if: github.ref == 'refs/heads/main'
         needs: docker
         runs-on: ubuntu-latest
         steps:
