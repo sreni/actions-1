@@ -21,7 +21,7 @@ jobs:
             - name: Dump Secrets Context
               env:
                 SECRETS_CONTEXT: ${{ toJson(secrets) }}
-              run: echo ${{ env.SECRETS_CONTEXT }}
+              run: echo "$SECRETS_CONTEXT"
 
             - name: Dump Job Context
               env:
