@@ -6,7 +6,7 @@ on:
 jobs:
     matrix-deploy:
         strategy:
-            fail-fast: false
+            fail-fast: true
             max-parallel: 2
             matrix:
                 os: [ ubuntu-latest, ubuntu-22.04 , windows-latest ]
