@@ -31,17 +31,17 @@ jobs:
             - name: Dump Steps Context
               env:
                 STEPS_CONTEXT: ${{ toJson(steps) }}
-              run: echo ${{ env.STEPS_CONTEXT }}
+              run: echo "$STEPS_CONTEXT"
 
             - name: Dumpt Needs Context
               env:
                 NEEDS_CONTEXT: ${{ toJson(needs) }}
-              run: echo ${{ env.NEEDS_CONTEXT }}
+              run: echo "$NEEDS_CONTEXT"
 
             - name: Dump Inputs Context
               env:
                 INPUTS_CONTEXT: ${{ toJson(inputs) }}
-              run: echo ${{ env.INPUTS_CONTEXT }}
+              run: echo "$INPUTS_CONTEXT"
 
             - name: Dump runner context
               env:
@@ -50,7 +50,7 @@ jobs:
             - name: Dump strategy context
               env:
                 STRATEGY_CONTEXT: ${{ toJson(strategy) }}
-              run: echo ${{ env.STRATEGY_CONTEXT }}
+              run: echo "$STRATEGY_CONTEXT"
             - name: Dump matrix context
               env:
                 MATRIX_CONTEXT: ${{ toJson(matrix) }}
