@@ -1,0 +1,21 @@
+name: Workflow Filters And Activities
+on:
+    push:
+        branches: 
+            - main
+            - 'feature/*'
+    pull_request: 
+        types: 
+            - opened
+            - closed
+        paths-ignore: 
+            - README.MD
+        branches: 
+            - main
+jobs:
+    hello:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Capturing Which Event is Trigerring
+            run: echo Capturing Which Event is Trigerring the workflow - ${{ github.event_name }}
+  
