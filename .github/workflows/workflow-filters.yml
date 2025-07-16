@@ -1,5 +1,5 @@
 name: Workflow Fileters And Activities
-on:
+on: 
     workflow_dispatch:  
     push: 
         branches:
