@@ -1,12 +1,10 @@
 name: Workflow Fileters And Activities
-on: 
-    workflow_dispatch:  
-    push: 
+on:   
+    push:
         branches:
             - main
             - '!feature/*'
     #brnaches_ignore: 
-    
     pull_request:
         types:
             - opened 
@@ -15,8 +13,6 @@ on:
             - README.MD
         branches: 
             - main
-
-
 jobs:
     hello:
         runs-on: ubuntu-latest
