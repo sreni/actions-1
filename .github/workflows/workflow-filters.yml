@@ -17,5 +17,5 @@ jobs:
         runs-on: ubuntu-latest
         steps:
           - name: Capturing Which Event is Trigerring
-            run: echo Capturing Which Event is Trigerring - ${{ github.event_name }}
+            run: echo Capturing Which Event is Trigerring the workflow - ${{ github.event_name }}
   
