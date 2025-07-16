@@ -1,9 +1,9 @@
-name: Workflow Fileters And Activities
+name: Workflow Filters And Activities
 on:
     push:
         branches: 
             - main
-            - '!feature/*'
+            - 'feature/*'
     pull_request: 
         types: 
             - opened
