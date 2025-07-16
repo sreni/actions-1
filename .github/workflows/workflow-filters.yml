@@ -1,18 +1,6 @@
 name: Workflow Fileters And Activities
-on:   
+on:
     push:
-        branches:
-            - main
-            - '!feature/*'
-    #brnaches_ignore: 
-    pull_request:
-        types:
-            - opened 
-            - closed
-        paths-ignore: 
-            - README.MD
-        branches: 
-            - main
 jobs:
     hello:
         runs-on: ubuntu-latest
